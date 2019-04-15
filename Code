@@ -1,0 +1,90 @@
+//full program
+public class Array {
+	public static void main(String [] args) {
+		//initialize array
+		int [] array = {11, 99999, 8, 7, 6, 5, 4, 3, 2, 1};
+		int n = array.length; 
+		System.out.println("Start!");
+		
+		//shuffle the array
+		for(int a = 0; a<n; a++) {
+			int random = (int) (Math.random()*n);
+			int tempStorage = array[a];
+			array[a] = array[random];
+			array[random] = tempStorage;
+		}
+		//print
+		for(int a = 0; a<n; a++) {
+			System.out.print(array[a]+" ");
+		}
+		
+		//sort the array
+    for (int a = 1; a < n; ++a) { 
+      int key = array[a]; 
+      int j = a - 1; 
+		  while (j >= 0 && array[j] > key)
+			{ 
+				array[j + 1] = array[j]; 
+				j = j - 1; 
+		  } 
+			array[j + 1] = key; 
+    } 
+		
+		//print
+		System.out.println("");
+		for(int a = 0; a<n; a++) {
+			System.out.print(array[a]+" ");
+		}
+	}
+}
+
+
+//shuffle alone
+/*
+public class Array {
+	public static void main(String [] args) {
+		//initialize shufflingArray
+		int [] shufflingArray = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+		System.out.println("Start!");
+		
+		//shuffle the shufflingArray
+		for(int i = 0; i<shufflingArray.length; i++) {
+			int random = (int) (Math.random()*shufflingArray.length);
+			int tempStorage = shufflingArray[i];
+			shufflingArray[i] = shufflingArray[random];
+			shufflingArray[random] = tempStorage;
+		}
+		//print
+		for(int i = 0; i<shufflingArray.length; i++) {
+			System.out.print(shufflingArray[i]+" ");
+		}
+	}
+}
+*/
+
+//sort alone
+/*
+public class Array {
+	public static void main(String [] args) {
+		//initialize sortingArray
+		int [] sortingArray = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+		System.out.println("Start!");
+		
+		//sort the sortingArray
+		for(int i = 0; i<sortingArray.length; i++) {
+			for(int c = 0; c<9; c++) {
+				if(sortingArray[c]>sortingArray[c+1]) {
+					int tempStorage = sortingArray[c];
+					sortingArray[c] = sortingArray[c+1];
+					sortingArray[c+1] = tempStorage;
+				}
+			}
+		}
+		
+		//print
+		for(int i = 0; i<sortingArray.length; i++) {
+			System.out.print(sortingArray[i]+" ");
+		}
+	}
+}
+*/
